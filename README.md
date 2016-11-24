@@ -2,6 +2,8 @@ This project is forked by Jay D Dee.
 
 Updated for v3.3.2 Windows support.
 
+Dockerfile updated by @nplayfair
+
 Building on linux prerequisites:
 
 It is assumed users know how to install packages on their system and
