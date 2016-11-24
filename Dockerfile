@@ -10,6 +10,7 @@ MAINTAINER  Guillaume J. Charmes <guillaume@charmes.net>
 
 RUN   apt-get update -qq
 
+RUN   apt-get install -qqy apt-utils
 RUN   apt-get install -qqy automake
 RUN   apt-get install -qqy libcurl4-openssl-dev
 RUN   apt-get install -qqy git
@@ -21,7 +22,7 @@ RUN   apt-get install -qqy pthreads
 RUN   apt-get install -qqy zlib
 
 
-RUN   git clone https://github.com/pooler/cpuminer
+RUN   git clone https://github.com/nplayfair/cpuminer-opt.git
 
 RUN   cd cpuminer && ./autogen.sh
 RUN   cd cpuminer && ./configure CFLAGS="-O3" CXXFLAGS="$CFLAGS -std=gnu++11"
