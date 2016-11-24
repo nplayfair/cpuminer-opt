@@ -8,17 +8,17 @@
 FROM    ubuntu:16.04
 MAINTAINER  Guillaume J. Charmes <guillaume@charmes.net>
 
+ENV DEBIAN_FRONTEND noninteractive
 RUN   apt-get update -qq
 
-RUN   apt-get install -qqy apt-utils
 RUN   apt-get install -qqy automake
 RUN   apt-get install -qqy libcurl4-openssl-dev
 RUN   apt-get install -qqy git
 RUN   apt-get install -qqy make
-RUN   apt-get install -qqy libjansson-dev 
+RUN   apt-get install -qqy libjansson-dev
 RUN   apt-get install -qqy libgmp-dev
 RUN   apt-get install -qqy libssl-dev
-RUN   apt-get install -qqy pthreads
+RUN   apt-get install -qqy libpthread-workqueue-dev
 RUN   apt-get install -qqy zlib
 
 
