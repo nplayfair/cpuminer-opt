@@ -19,14 +19,14 @@ RUN   apt-get install -qqy libjansson-dev
 RUN   apt-get install -qqy libgmp-dev
 RUN   apt-get install -qqy libssl-dev
 RUN   apt-get install -qqy libpthread-workqueue-dev
-RUN   apt-get install -qqy zlib
+RUN   apt-get install -qqy zlibc
 
 
 RUN   git clone https://github.com/nplayfair/cpuminer-opt.git
 
-RUN   cd cpuminer && ./autogen.sh
-RUN   cd cpuminer && ./configure CFLAGS="-O3" CXXFLAGS="$CFLAGS -std=gnu++11"
-RUN   cd cpuminer && make
+RUN   cd cpuminer-opt && ./autogen.sh
+RUN   cd cpuminer-opt && ./configure CFLAGS="-O3" CXXFLAGS="$CFLAGS -std=gnu++11"
+RUN   cd cpuminer-opt && make
 
-WORKDIR   /cpuminer
+WORKDIR   /cpuminer-opt
 ENTRYPOINT  ["./cpuminer"]
